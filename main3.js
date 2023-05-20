@@ -25,9 +25,20 @@ let io = socketIO(server)
 app.use(express.static('public'))
 app.set('view-engine', 'ejs')
 app.set('socketio', io);
+let login = 0;
+
+
 
 app.get('/', (req,res) => {
-    res.render('index.ejs')
+    if (login == 0){
+        res.redirect('/login');
+    }
+    else{
+        res.send("YOU ARE LOGGED IN!");
+    }
+})
+app.get('/login', (req, res) => {
+    res.render('login.ejs')
 })
 // let res;
 app.post('/submitted', (req, res) => {
