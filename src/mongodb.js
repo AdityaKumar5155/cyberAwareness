@@ -1,4 +1,8 @@
+
+
 const mongoose = require("mongoose")
+
+
 mongoose.connect("mongodb://127.0.0.1:27017/usersdb")
 .then(()=>{
     console.log("mongodb connected")
@@ -12,12 +16,12 @@ mongoose.connect("mongodb://127.0.0.1:27017/usersdb")
 const logInSchema = new mongoose.Schema({
     name:{
         type:String,
-        required:false
+        required:true
     },
 
     password:{
         type:String,
-        required:false
+        required:true
     },
 })
 
