@@ -34,6 +34,6 @@ app.post("/signup", urlencodedParser, async(req,res) =>{
 })
 
 
-server.listen(4444, () =>{
+server.listen(443, () =>{
     console.log("App listening on port 4444")
 })
