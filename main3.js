@@ -25,6 +25,9 @@ let io = socketIO(server)
 app.use(express.static('public'))
 app.set('view-engine', 'ejs')
 app.set('socketio', io);
+let cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 let login = 0;
 
 
