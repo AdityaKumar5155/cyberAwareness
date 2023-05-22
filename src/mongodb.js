@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/quiz")
+mongoose.connect("mongodb+srv://cyberKids:adisatpriya@cluster0.jeolobf.mongodb.net/quiz?retryWrites=true&w=majority")
 .then(()=>{
     console.log("Connected to Database")
 })
