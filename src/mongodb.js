@@ -9,35 +9,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/quiz")
     console.log("Oopsie!")
 })
 
-
-// const SignUpSchema = new mongoose.Schema({
-//     userId: {
-//         type: String,
-//         required: true,
-//         unique: true, // Ensure uniqueness of the custom primary key
-//       },
-//     class:{
-//         type:String,
-//         required:true
-//     },
-
-//     section:{
-//         type:String,
-//         required:false,
-//         defaultValue: null
-//     },
-
-//     roll:{
-//         type:String,
-//         required:true
-//     },
-
-//     school:{
-//         type:String,
-//         required:true
-//     }
-// })
-
 const SignUpSchema = new mongoose.Schema({
   userId: {
     type: String,
@@ -53,9 +24,6 @@ const SignUpSchema = new mongoose.Schema({
 SignUpSchema.virtual('primaryKey').get(function() {
   return this.userId;
 });
-
-// const User = mongoose.model('User', userSchema);
-
 
 const user = new mongoose.model("users", SignUpSchema)
 module.exports= user

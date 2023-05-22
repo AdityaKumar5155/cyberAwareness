@@ -5,7 +5,6 @@ const user = require("./mongodb")
 const socketIO = require('socket.io')
 const http = require('http')
 
-// app.use(express.json())
 app.set("view engine", "ejs")
 
 
@@ -25,32 +24,10 @@ app.post("/signup", urlencodedParser, async(req,res) =>{
         roll:req.body.roll,
         school:req.body.school
     }
-    console.log(data);
 
     await user.create(data).then((response)=>{
-        console.log(response);
-    }).catch((err)=>{console.log(err)});
-
-
-    
-    // user.find({_id:req.body.name, school:req.body.school})
-    // .then(async function(document) {
-    //     console.log("I'm here")
-    //     if(document.length===1){
-    //         res.render("index.ejs");
-    //     }
-
-    //     else{
-    //         await(user.create(data).catch(error => {console.log(error)}))
-    //         res.render("index.ejs")
-    //     }
-    // })
-    // .catch(error => {
-    //   console.error(error);
-    // });
-
-
-
+        console.log("Woohoo!");
+    }).catch((err)=>{console.log("oohooW!")});
 })
 
 
