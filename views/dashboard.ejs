@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cyber Awareness</title>
+</head>
+<body>
+    <h1>WELCOME <p id="name"></p>!</h1>
+    <h2>HERE'S YOUR QUESTION</h2>
+    <h3 id="ques"></h3>
+    <form action="/check" method="POST">
+        <label>A: <span id="optionA"></span></label>
+        <input type="radio" name="option" value="A"><br>
+        <label>B: <span id="optionB"></span></label>
+        <input type="radio" name="option" value="B"><br>
+        <label>C: <span id="optionC"></span></label>
+        <input type="radio" name="option" value="C"><br>
+        <label>D: <span id="optionD"></span></label>
+        <input type="radio" name="option" value="D"><br>
+        <input type="submit" style="margin-top: 10px;"/>
+        <input type="hidden" name="quesId" value="1001">
+    </form>
+    <button type="button" style="margin-top: 20px;"><a href="/logout">LOGOUT</a></button>
+    <script>
+        
+        let quesId = "<%=quesId %>";
+        let ques = "<%=ques%>";
+        let optionA = "<%=optionA%>";
+        let optionB = "<%=optionB%>";
+        let optionC = "<%=optionC%>";
+        let optionD = "<%=optionD%>";
+        document.getElementById("optionA").innerHTML = optionA;
+        document.getElementById("optionB").innerHTML = optionB;
+        document.getElementById("optionC").innerHTML = optionC;
+        document.getElementById("optionD").innerHTML = optionD;
+        document.getElementById("ques").innerHTML = ques;
+    </script>
+</body>
+</html>

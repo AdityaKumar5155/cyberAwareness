@@ -1,6 +1,6 @@
-let socket = io();
-socket.on("redirect", () => {
-    console.log("Woooooooooohooooooooooooooooo!")
-})
+// let socket = io();
+// socket.on("redirect", () => {
+//     console.log("Woooooooooohooooooooooooooooo!")
+// })
 
 

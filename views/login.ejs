@@ -4,29 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- <script
-  src="https://code.jquery.com/jquery-3.7.0.min.js"
-  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-  crossorigin="anonymous"></script> -->
-  <script src="/socket.io/socket.io.js"></script>
-  <title>Document</title>
+    <title>Login - Cyber Awareness</title>
 </head>
 <body>
-    <div id="failed"></div>
-    <form class="" action="/signup" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Enter name"><br>
-        <label for="age">Section</label>
-        <input type="text" name="section" id="section" placeholder="Enter Age"><br>
-        <label for="Class">Class</label>
-        <input type="text" name="class" id="class" placeholder="Enter Class"><br>
-        <label for="roll">roll</label>
-        <input type="text" name="roll" id="roll" placeholder="Enter Roll"><br>
-        <label for="School">School</label>
-        <input type="text" name="school" id="school" placeholder="Enter School"><br>
-        <button type="submit">Submit</button>
+    <form method="post" action="/login">
+        <label for="name">Username</label>
+        <input type="text" name="name" id="name" placeholder="Your Name"/>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password"/>
+        <input type="submit">
     </form>
 </body>
-<script src="script.js"></script>
 </html>
