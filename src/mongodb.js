@@ -41,7 +41,7 @@ const questionSchema = new mongoose.Schema({
 })
 
 questionSchema.virtual('primaryKey').get(function() {
-  return this.userId;
+  return this.quesId;
 });
 
 const user = new mongoose.model("users", SignUpSchema)
