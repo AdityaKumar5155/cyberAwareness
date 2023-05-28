@@ -10,38 +10,41 @@ const path = require("path")
 const bodyParser  = require('body-parser')
 const collection = require("./mongodb")
 
+app.use(express.static('public'))
 
-
-const hbs = require("hbs")
+const hbs = require("ejs")
 app.use(express.json())
-app.set("view engine", "hbs")
+app.set("view engine", "ejs")
 
 
 
 
 
 
-app.listen(3000, () =>{
-    console.log("port connected")
+app.listen(5050, () =>{
+    console.log("Server Connected")
+    console.log("Waiting for input.")
 })
 
 
 app.get("/", (req,res)=>{
-    res.render("signup")
+    res.render("registration")
 })
 
 
 
-var jsonParser = bodyParser.json()
- 
+//var jsonParser = bodyParser.json() 
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
-app.post("/signup", urlencodedParser, async(req,res) =>{
+app.post("/registration", urlencodedParser, async(req,res) =>{
     const data = {
         name:req.body.name,
-        password:req.body.password
+        class:req.body.class,
+        section:req.body.section,
+        roll:req.body.roll,
+        school:req.body.school
     }
     console.log(data);
 
@@ -49,7 +52,7 @@ app.post("/signup", urlencodedParser, async(req,res) =>{
 
 
     
-    collection.find({name:req.body.name})
+    collection.find({name:req.body.name, class:req.body.class,section:req.body.section,roll:req.body.roll,school:req.body.school})
     .then(async function(document) {
         console.log("I'm here")
        if(document.length==1){
@@ -58,7 +61,7 @@ app.post("/signup", urlencodedParser, async(req,res) =>{
 
        else{
 
-        await(collection.create(data))
+       await(collection.create(data))
 
         res.render("home")}
 
@@ -98,4 +101,12 @@ app.post("/signup", urlencodedParser, async(req,res) =>{
 app.get("/signup", (req,res)=>{
     res.render("home")
 })
+
+
+
+
+
+
+
+
 
